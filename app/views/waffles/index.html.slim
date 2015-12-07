@@ -1,0 +1,32 @@
+.container.post-wrapper
+  - if user_signed_in?
+      = link_to "Add A Novelty Waffle", new_waffle_path, class: "btn  btn-default"
+  #posts.transitions-enabled
+    - @waffles.each do |waffle|
+      .box.panel.panel-default
+        p waffle box
+        h2= link_to waffle.title, waffle
+        
+        .panel-body
+          p
+            | Submitted by 
+            = waffle.user.email
+            
+          p
+            | on 
+            = waffle.created_at.strftime("%A %d %b %Y")
+          
+          p
+            = truncate(waffle.description, length: 200)
+
+          / p
+          /   = post.comments.count 
+          /   |  Comments
+
+          / p
+          /   =post.get_likes.size 
+          /   i.fa.fa-thumbs-up
+
+          / p
+          /   =post.get_dislikes.size
+          /   i.fa.fa-thumbs-down
