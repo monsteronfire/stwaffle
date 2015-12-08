@@ -28,7 +28,7 @@ class WafflesController < ApplicationController
 
   def update
     if @waffle.update(waffle_params)
-      redirect_to @waffle
+      redirect_to @waffle, notice: "Waffle was successfully updated"
     else
       render 'edit'
     end
@@ -40,10 +40,11 @@ class WafflesController < ApplicationController
   end
 
   private
-    def find_waffle
-      @waffle = Waffle.find(params[:id])
-    end
     def waffle_params
       params.require(:waffle).permit(:title, :description)
+    end
+    
+    def find_waffle
+      @waffle = Waffle.find(params[:id])
     end
 end
