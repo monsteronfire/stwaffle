@@ -1,5 +1,38 @@
-= simple_form_for @waffle do |f|
-  = render 'waffleimage'
-  = f.input :title
-  = f.input :description
-  = f.button :submit, class: "btn btn-default"
+.create-waffle-wrapper
+  .container
+    .col-md-6.col-md-offset-3
+      = simple_form_for @waffle do |f|
+
+        .form-group
+          .row
+            = render "waffleimage"
+            = f.input :title, required: "required"
+            = f.input :description, class: "waffle-desc"
+
+        .form-group
+          .row
+            = label_tag "Choose your ice-cream "
+            = f.select(:ice_cream, ['Salted Caramel', 'Coffee Crunch', 'Coconut Candy', 'Chocolate', 'Apple Crumble', 'Berry White', 'Bountiful', 'Madagascar Vanilla Bean'], {}, { :class => 'form-control waffle-select-icecream' })
+
+        .form-group
+          .row
+            = label_tag "Choose your fruit "
+            = f.select(:fruit, ['Banana', 'Apple', 'Orange', 'Mango', 'Kiwi', 'Peach'], {}, { :class => 'form-control waffle-select-fruit' })
+
+        .form-group
+          .row
+            = label_tag "Choose your meat  "
+            = f.select(:meat, ['Bacon Strips', 'Bacon Bits', 'Fried Chicken Skin'], {}, { :class => 'form-control waffle-select-meat' })
+
+        .form-group
+          .row
+            = label_tag "Choose your nuts  "
+            = f.select(:nut, ['Peanut', 'Almond', 'Walnut', 'Cashews'], {}, { :class => 'form-control waffle-select-nut' })
+
+        .form-group
+          .row
+            = f.input :ingredient_x, class: "waffle-ingredient-x"
+            
+        .form-group
+          .row
+            = f.button :submit, class: "btn btn-default"

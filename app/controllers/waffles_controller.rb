@@ -46,7 +46,7 @@ class WafflesController < ApplicationController
 
   private
     def waffle_params
-      params.require(:waffle).permit(:title, :description)
+      params.require(:waffle).permit(:title, :description, :ice_cream, :fruit, :meat, :nut, :ingredient_x)
     end
 
     def find_waffle
