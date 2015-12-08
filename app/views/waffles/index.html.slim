@@ -1,10 +1,9 @@
 .container.post-wrapper
   - if user_signed_in?
       = link_to "Create A Novelty Waffle", new_waffle_path, class: "btn  btn-default"
-  #posts.transitions-enabled
+  #waffles.transitions-enabled
     - @waffles.each do |waffle|
       .box.panel.panel-default
-        p waffle box
         h2= link_to waffle.title, waffle
         
         .panel-body
