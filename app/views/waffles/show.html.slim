@@ -7,8 +7,8 @@
 
     p= @waffle.description
 
-    = link_to like_waffle_path(@waffle), method: :get do
-      i.fa.fa-thumbs-up
+    = link_to like_waffle_path(@waffle), method: :put, class: "btn btn-default" do
+      span.glyphicon.glyphicon-heart
       = @waffle.get_upvotes.size
 
 
