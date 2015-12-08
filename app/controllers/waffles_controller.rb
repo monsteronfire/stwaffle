@@ -1,5 +1,5 @@
 class WafflesController < ApplicationController
-  before_action :find_waffle, only: [:show, :edit, :update, :destroy]
+  before_action :find_waffle, only: [:show, :edit, :update, :destroy, :upvote]
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
@@ -39,11 +39,16 @@ class WafflesController < ApplicationController
     redirect_to root_path
   end
 
+  def upvote
+    @waffle.upvote_by current_user
+    redirect_to :back
+  end
+
   private
     def waffle_params
       params.require(:waffle).permit(:title, :description)
     end
-    
+
     def find_waffle
       @waffle = Waffle.find(params[:id])
     end

@@ -7,6 +7,13 @@
 
     p= @waffle.description
 
+    = link_to like_waffle_path(@waffle), method: :get do
+      i.fa.fa-thumbs-up
+      = @waffle.get_upvotes.size
+
+    = link_to like_waffle_path(@waffle), method: :get do
+      i.fa.fa-thumbs-down
+      = @waffle.get_downvotes.size
 
 
     = link_to "Back", root_path, class: "btn btn-default"
