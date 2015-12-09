@@ -1,18 +1,34 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable, :confirmable,
-         :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook]
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
   has_many :waffles
 
-  def self.from_omniauth(auth)
-    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-      user.email = auth.info.email
-      user.password = Devise.friendly_token[0,20]
-      user.name = auth.info.name   # assuming the user model has a name
-      user.image = auth.info.image # assuming the user model has an image
+  def self.find_for_oauth(auth, signed_in_resource = nil)
+    identity = Identity.find_for_oauth(auth)
+    user = signed_in_resource ? signed_in_resource : identity.user
+
+    if user.nil?
+      email = auth.info.email
+      user = User.find_by(email: email) if email
+
+      if user.nil?
+        user = User.create!(
+          full_name: auth.extra.raw_info.name,
+          avatar: auth.info.image,
+          email: email,
+          password: Devise.friendly_token[0,20]
+        )
+      end
     end
+
+    if identity.user != user
+      identity.user = user
+      identity.save!
+    end
+    user
   end
 
 end
