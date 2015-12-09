@@ -19,7 +19,6 @@ gem 'devise'
 gem 'paperclip'
 gem 'masonry-rails'
 gem 'acts_as_votable'
-gem 'jquery-turbolinks'
 
 group :development, :test do
   gem 'sqlite3'
