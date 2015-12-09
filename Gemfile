@@ -19,6 +19,7 @@ gem 'devise'
 gem 'paperclip'
 gem 'masonry-rails'
 gem 'acts_as_votable'
+gem 'omniauth-facebook'
 
 group :development, :test do
   gem 'sqlite3'
