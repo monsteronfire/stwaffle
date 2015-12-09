@@ -10,11 +10,11 @@
       p= @waffle.description
       
       p Ingredient List
-      p= @waffle.ice_cream
-      p= @waffle.fruit
-      p= @waffle.meat
-      p= @waffle.nut
-      p= @waffle.ingredient_x
+      p.icecream-name = @waffle.ice_cream
+      p.fruit-name = @waffle.fruit
+      p.meat-name = @waffle.meat
+      p.nut-name = @waffle.nut
+      p = @waffle.ingredient_x
 
       = link_to like_waffle_path(@waffle), method: :put, class: "btn btn-default" do
         span.glyphicon.glyphicon-heart

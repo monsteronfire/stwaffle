@@ -5,7 +5,7 @@
     - @waffles.each do |waffle|
       .box.panel.panel-default
         h2= link_to waffle.title, waffle
-        
+        = render "waffleimage"
         .panel-body
           p
             | Submitted by 
@@ -15,5 +15,9 @@
             | on 
             = waffle.created_at.strftime("%A %d %b %Y")
           
-          p
-            = truncate(waffle.description, length: 200)
+          p Ingredient List
+          p.icecream-name = waffle.ice_cream
+          p.fruit-name = waffle.fruit
+          p.meat-name = waffle.meat
+          p.nut-name = waffle.nut
+          p = waffle.ingredient_x

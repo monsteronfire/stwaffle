@@ -12,22 +12,22 @@
         .form-group
           .row
             = label_tag "Choose your ice-cream "
-            = f.select(:ice_cream, ['Salted Caramel', 'Coffee Crunch', 'Coconut Candy', 'Chocolate', 'Apple Crumble', 'Berry White', 'Bountiful', 'Madagascar Vanilla Bean'], {}, { :class => 'form-control waffle-select-icecream' })
+            = f.select :ice_cream, ['Corn Flakes', 'Salted Caramel', 'Coffee Crunch', 'Coconut Candy', 'Chocolate', 'Apple Crumble', 'Berry White', 'Bountiful', 'Madagascar Vanilla Bean'], {}, class: 'form-control waffle-select-icecream', id: 'waffleicecream'
 
         .form-group
           .row
             = label_tag "Choose your fruit "
-            = f.select(:fruit, ['Banana', 'Apple', 'Orange', 'Mango', 'Kiwi', 'Peach'], {}, { :class => 'form-control waffle-select-fruit' })
+            = f.select :fruit, ['Banana', 'Apple', 'Orange', 'Mango', 'Kiwi', 'Peach'], {}, class: 'form-control waffle-select-fruit', id: 'wafflefruit'
 
         .form-group
           .row
             = label_tag "Choose your meat  "
-            = f.select(:meat, ['Bacon Strips', 'Bacon Bits', 'Fried Chicken Skin'], {}, { :class => 'form-control waffle-select-meat' })
+            = f.select :meat, ['Bacon Strips', 'Bacon Bits', 'Fried Chicken Skin'], {}, class: 'form-control waffle-select-meat', id: 'wafflemeat'
 
         .form-group
           .row
             = label_tag "Choose your nuts  "
-            = f.select(:nut, ['Peanut', 'Almond', 'Walnut', 'Cashews'], {}, { :class => 'form-control waffle-select-nut' })
+            = f.select :nut, ['Peanut', 'Almond', 'Walnut', 'Cashew'], {}, class: 'form-control waffle-select-nut', id: 'wafflenut'
 
         .form-group
           .row

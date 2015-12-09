@@ -2,6 +2,8 @@
 /*They will automatically be included in application.css.*/
 /*You can use Sass (SCSS) here: http://sass-lang.com/*/
 
+
+
 .waffle-box {
   position: relative;
   width: 300px;
@@ -89,12 +91,12 @@
   background-image: url('almonds-sliced.png');
 }
 
-.waffle-nut-holder.nut-cashew {
-  background-image: url('cashews.png');
-}
-
 .waffle-nut-holder.nut-walnut {
   background-image: url('walnuts.png');
+}
+
+.waffle-nut-holder.nut-cashew {
+  background-image: url('cashews.png');
 }
 
 
