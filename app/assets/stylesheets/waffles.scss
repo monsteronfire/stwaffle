@@ -20,6 +20,89 @@
   background-size: cover;
 }
 
+
+/* Fruit Classes */
+.waffle-fruit-holder {
+  z-index: 2;
+}
+
+.waffle-fruit-holder.fruit-banana {
+  background-image: url('banana-slices.png');
+}
+
+.waffle-fruit-holder.fruit-apple {
+  background-image: url('apple-slices.png');
+}
+
+.waffle-fruit-holder.fruit-orange {
+  background-image: url('orange-slices.png');
+}
+
+.waffle-fruit-holder.fruit-mango {
+  background-image: url('mango-slices.png');
+}
+
+.waffle-fruit-holder.fruit-kiwi {
+  background-image: url('kiwi-slices.png');
+}
+
+.waffle-fruit-holder.fruit-peach {
+  background-image: url('peach-slices.png');
+}
+
+/* Ice-cream Classes */
+.waffle-ice-cream-holder {
+  z-index: 3;
+}
+
+.waffle-ice-cream-holder.ice-cream-cornflakes {
+  background-image: url('icecream-scooped.png');
+}
+
+/* Meat Classes */
+.waffle-meat-holder {
+  z-index: 4;
+}
+
+.waffle-meat-holder.meat-bacon-strips {
+  background-image: url('bacon-strips.png');
+}
+
+.waffle-meat-holder.meat-bacon-bits {
+  background-image: url('bacon-bits.png');
+}
+
+.waffle-meat-holder.meat-chicken-skin {
+  background-image: url('fried-chicken-skin.png');
+}
+
+/* Nut Classes */
+.waffle-nut-holder {
+  z-index: 5;
+}
+
+.waffle-nut-holder.nut-peanut {
+  background-image: url('peanuts-chopped.png');
+}
+
+.waffle-nut-holder.nut-almond {
+  background-image: url('almonds-sliced.png');
+}
+
+.waffle-nut-holder.nut-cashew {
+  background-image: url('cashews.png');
+}
+
+.waffle-nut-holder.nut-walnut {
+  background-image: url('walnuts.png');
+}
+
+
+/* Ingredient-X Classes */
+.waffle-ingredient-x-holder {
+  z-index: 6;
+}
+
 .waffle-description textarea {
   resize: none;
   height: 200px;

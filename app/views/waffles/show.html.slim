@@ -1,25 +1,26 @@
-.container
-  .col-md-6
-    h2= @waffle.title
-    = render "waffleimage"
-    p
-      | Sumbitted by 
-      = @waffle.user.name
+.show-waffle-wrapper
+  .container
+    .col-md-6.col-md-offset-3
+      h2.text-center= @waffle.title
+      = render "waffleimage"
+      p
+        | Sumbitted by 
+        = @waffle.user.name
 
-    p= @waffle.description
-    
-    p Ingredient List
-    p= @waffle.ice_cream
-    p= @waffle.fruit
-    p= @waffle.meat
-    p= @waffle.nut
-    p= @waffle.ingredient_x
+      p= @waffle.description
+      
+      p Ingredient List
+      p= @waffle.ice_cream
+      p= @waffle.fruit
+      p= @waffle.meat
+      p= @waffle.nut
+      p= @waffle.ingredient_x
 
-    = link_to like_waffle_path(@waffle), method: :put, class: "btn btn-default" do
-      span.glyphicon.glyphicon-heart
-      = @waffle.get_upvotes.size
+      = link_to like_waffle_path(@waffle), method: :put, class: "btn btn-default" do
+        span.glyphicon.glyphicon-heart
+        = @waffle.get_upvotes.size
 
 
-    = link_to "Back", root_path, class: "btn btn-default"
-    = link_to "Edit", edit_waffle_path(@waffle), class: "btn btn-default"
-    = link_to "Delete", waffle_path(@waffle), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-default"
+      = link_to "Back", root_path, class: "btn btn-default"
+      = link_to "Edit", edit_waffle_path(@waffle), class: "btn btn-default"
+      = link_to "Delete", waffle_path(@waffle), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-default"
