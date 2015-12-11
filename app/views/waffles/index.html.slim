@@ -1,23 +1,33 @@
 .container.post-wrapper
   - if user_signed_in?
-      = link_to "Create A Novelty Waffle", new_waffle_path, class: "btn  btn-default"
-  #waffles.transitions-enabled
+    .row.text-center.create-btn-holder
+      = link_to "Create A Novelty Waffle", new_waffle_path, class: "btn  btn-primary"
+  #waffles.transitions-enabled.clearfix
     - @waffles.each do |waffle|
       .box.panel.panel-default
-        h2= link_to waffle.title, waffle
+        h2.text-center = link_to waffle.title, waffle
         = render "waffleimage"
         .panel-body
-          p
-            | Submitted by 
+          p.text-center
+            | Created by 
             = waffle.user.name
+            |  on 
+            = waffle.created_at.strftime("%a %d %b %y")
 
-          p
-            | on 
-            = waffle.created_at.strftime("%A %d %b %Y")
+          br
+          = link_to like_waffle_path(waffle), method: :put, class: "btn btn-default" do
+            span.glyphicon.glyphicon-heart
+            = waffle.get_upvotes.size
           
-          p Ingredient List
-          p.icecream-name = waffle.ice_cream
-          p.fruit-name = waffle.fruit
-          p.meat-name = waffle.meat
-          p.nut-name = waffle.nut
-          p = waffle.ingredient_x
+          ul.ingredient-list
+            h4 Ingredients:
+            li 
+              p.icecream-name = waffle.ice_cream
+            li 
+              p.fruit-name = waffle.fruit
+            li 
+              p.meat-name = waffle.meat
+            li 
+              p.nut-name = waffle.nut
+            li 
+              p = waffle.ingredient_x

@@ -3,22 +3,29 @@
     .col-md-6.col-md-offset-3
       h2.text-center= @waffle.title
       = render "waffleimage"
+      
+      span.glyphicon.glyphicon-heart
+      = @waffle.get_upvotes.size
+
       p
-        | Sumbitted by 
+        | Created by 
         = @waffle.user.name
 
       p= @waffle.description
       
-      p Ingredient List
-      p.icecream-name = @waffle.ice_cream
-      p.fruit-name = @waffle.fruit
-      p.meat-name = @waffle.meat
-      p.nut-name = @waffle.nut
-      p = @waffle.ingredient_x
+      ul.ingredient-list
+        h4 Ingredient List
+        li
+          p.icecream-name = @waffle.ice_cream
+        li
+          p.fruit-name = @waffle.fruit
+        li
+          p.meat-name = @waffle.meat
+        li
+          p.nut-name = @waffle.nut
+        li
+          p = @waffle.ingredient_x
 
-      = link_to like_waffle_path(@waffle), method: :put, class: "btn btn-default" do
-        span.glyphicon.glyphicon-heart
-        = @waffle.get_upvotes.size
 
 
       = link_to "Back", root_path, class: "btn btn-default"

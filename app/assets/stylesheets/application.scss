@@ -15,3 +15,25 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+$punch: #DC4333;
+$pomegranate: #E75113;
+
+/** Global Override **/
+a {
+  color: $pomegranate;
+}
+
+a:hover {
+  color: darken($pomegranate, 5%);
+}
+
+.btn-primary {
+  background-color: $pomegranate;
+  border-color: darken($pomegranate, 3%)
+}
+
+.btn-primary:hover {
+  background-color: darken($pomegranate, 5%);
+  border-color: darken($pomegranate, 7%)
+}

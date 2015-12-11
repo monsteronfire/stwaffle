@@ -2,6 +2,17 @@
 /*They will automatically be included in application.css.*/
 /*You can use Sass (SCSS) here: http://sass-lang.com/*/
 
+$punch: #DC4333;
+$pomegranate: #E75113;
+
+$bridal-heath: #FFFAF2;
+
+$alabaster: #FBFBFB;
+
+/** Global Styles **/
+@import url('https://fonts.googleapis.com/css?family=Zeyada');
+
+
 body {
   background-image: url('bg-tile.png');
 }
@@ -110,4 +121,31 @@ body {
 .waffle-description textarea {
   resize: none;
   height: 200px;
+}
+
+/** Homepage Styles **/
+.box {
+  width: 310px;
+  float: left;
+}
+
+.ingredient-list {
+  padding-left: 0px;
+  background-color: $alabaster;
+  padding: 20px 30px;
+}
+
+.ingredient-list h4 {
+  margin-bottom: 20px;
+}
+
+.ingredient-list li {
+  list-style: none;
+  border-bottom: 1px solid #EAEAEA;
+  font-family: 'Zeyada', cursive;
+  font-size: 20px;
+}
+
+.create-btn-holder {
+  margin-bottom: 20px;
 }
